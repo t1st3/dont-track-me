@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "dont-track-me",
-	"description": "WebExtension (for Firefox/Chrome/Opera/Edge) that prevents you from being tracked by Facebook/Twitterwhen you browse the web.",
+	"description": "WebExtension (for Firefox/Chrome/Opera/Edge) that prevents you from being tracked by Facebook/Twitter when you browse the web.",
 	"homepage_url": "https://github.com/t1st3/dont-track-me",
 	"version": "0.1.0",
 	"icons": {

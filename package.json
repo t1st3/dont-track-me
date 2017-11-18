@@ -1,7 +1,7 @@
 {
 	"name": "dont-track-me",
 	"version": "0.1.0",
-	"description": "WebExtension (for Firefox/Chrome/Opera/Edge) that prevents you from being tracked by Facebook/Twitterwhen you browse the web.",
+	"description": "WebExtension (for Firefox/Chrome/Opera/Edge) that prevents you from being tracked by Facebook/Twitter when you browse the web.",
 	"license": "MIT",
 	"repository": "t1st3/dont-track-me",
 	"author": {
@@ -28,7 +28,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"chai": "^4.1.2",
-		"codecov": "^2.2.0",
+		"codecov": "^3.0.0",
 		"js-beautify": "^1.7.4",
 		"karma": "^1.7.1",
 		"karma-chai": "^0.1.0",
