@@ -1,7 +1,7 @@
 {
 	"name": "dont-track-me",
 	"version": "0.1.0",
-	"description": "WebExtension (for Firefox/Chrome/Opera/Edge) that prevents you from being tracked by Facebook/Twitter when you browse the web.",
+	"description": "WebExtension that prevents you from being tracked by Facebook/Twitter when you browse the web.",
 	"license": "MIT",
 	"repository": "t1st3/dont-track-me",
 	"author": {
@@ -17,7 +17,8 @@
 		"lint": "xo && web-ext lint --source-dir src",
 		"test": "karma start",
 		"test:watch": "karma start --no-single-run",
-		"test:debug": "karma start --no-single-run --browsers Firefox"
+		"test:debug": "karma start --no-single-run --browsers Firefox",
+		"postinstall": "cp ./node_modules/webextension-polyfill/dist/browser-polyfill.min* ./src/"
 	},
 	"files": [
 		"index.js"
@@ -25,7 +26,9 @@
 	"keywords": [
 		""
 	],
-	"dependencies": {},
+	"dependencies": {
+		"webextension-polyfill": "^0.2.1"
+	},
 	"devDependencies": {
 		"chai": "^4.1.2",
 		"codecov": "^3.0.0",
