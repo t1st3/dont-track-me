@@ -1,34 +1,36 @@
+/* global window DontTrackMe */
+
 const browser = window.browser || window.chrome;
 
 const dontTrackMe = new DontTrackMe();
 
-browser.storage.onChanged.addListener((newSettings) => {
-	for (let i in dontTrackMe.networks) {
+browser.storage.onChanged.addListener(newSettings => {
+	for (const i in dontTrackMe.networks) { // eslint-disable-line guard-for-in
 		dontTrackMe.networks[i].blocked = newSettings.blockedNetworks.newValue[i];
 	}
 	updateListener();
 });
 
-browser.storage.local.get().then((storedSettings) => {
+browser.storage.local.get().then(storedSettings => {
 	if (storedSettings.blockedNetworks) {
-		for (let i in dontTrackMe.networks) {
+		for (const i in dontTrackMe.networks) { // eslint-disable-line guard-for-in
 			dontTrackMe.networks[i].blocked = storedSettings.blockedNetworks[i];
 		}
 	} else {
-		let blockedNetworks = {};
-		for (let i in dontTrackMe.networks) {
+		const blockedNetworks = {};
+		for (const i in dontTrackMe.networks) { // eslint-disable-line guard-for-in
 			blockedNetworks[i] = dontTrackMe.networks[i].blocked;
 		}
 		browser.storage.local.set({blockedNetworks});
 	}
 	updateListener();
-}).catch(()=> {
+}).catch(() => {
 	console.log('Error retrieving stored settings');
 });
 
-function updateListener () {
+function updateListener() {
 	if (browser.webRequest.onBeforeRequest.hasListener(DontTrackMe.handleRequest)) {
-		browser.webRequest.onBeforeRequest.removeListener(DontTrackMe.handleRequest)
+		browser.webRequest.onBeforeRequest.removeListener(DontTrackMe.handleRequest);
 	}
 	browser.webRequest.onBeforeRequest.addListener(
 		DontTrackMe.handleRequest,

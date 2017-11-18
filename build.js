@@ -1,7 +1,8 @@
 const fs = require('fs');
 const beautify = require('js-beautify').js_beautify;
+
 const beautifyOpts = {
-	indent_with_tabs: true
+	indent_with_tabs: true // eslint-disable-line camelcase
 };
 
 const packageJson = JSON.parse(fs.readFileSync('./package.json'));

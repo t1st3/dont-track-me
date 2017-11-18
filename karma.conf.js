@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = function (config) {
 	config.set({
 		basePath: '',
 		frameworks: ['mocha', 'chai'],
@@ -10,16 +10,16 @@ module.exports = function(config) {
 		],
 		client: {
 			mocha: {
-				reporter: 'html',
-			},
+				reporter: 'html'
+			}
 		},
 		preprocessors: {
 			'src/dont-track-me.js': ['coverage']
 		},
 		reporters: ['progress', 'coverage'],
 		coverageReporter: {
-			type : 'lcovonly',
-			dir : 'coverage',
+			type: 'lcovonly',
+			dir: 'coverage',
 			subdir: '.'
 		},
 		port: 9876,
@@ -30,10 +30,10 @@ module.exports = function(config) {
 		customLaunchers: {
 			FirefoxHeadless: {
 				base: 'Firefox',
-				flags: ['-headless'],
+				flags: ['-headless']
 			}
 		},
 		singleRun: true,
-		concurrency: Infinity,
+		concurrency: Infinity
 	});
 };
