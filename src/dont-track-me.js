@@ -5,7 +5,7 @@ const networks = {
 			'*://*.fbcdn.com/*',
 			'*://*.fbcdn.net/*'
 		],
-		urlMatch: /^https:\/\/(mobile.)?facebook.com/,
+		urlMatch: /^https:\/\/www.facebook.com/,
 		blocked: true
 	},
 	twitter: {
