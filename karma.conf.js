@@ -4,7 +4,7 @@ module.exports = function(config) {
 		frameworks: ['mocha', 'chai'],
 		files: [
 			'src/dont-track-me.js',
-			'test/dont-track-me.test.js'
+			'test/*.js'
 		],
 		exclude: [
 		],
@@ -19,12 +19,13 @@ module.exports = function(config) {
 		reporters: ['progress', 'coverage'],
 		coverageReporter: {
 			type : 'html',
-			dir : 'coverage/'
+			dir : 'coverage',
+			subdir: '.'
 		},
 		port: 9876,
 		colors: true,
 		logLevel: config.LOG_INFO,
-		autoWatch: false,
+		autoWatch: true,
 		browsers: ['FirefoxHeadless'],
 		customLaunchers: {
 			FirefoxHeadless: {

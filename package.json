@@ -16,7 +16,8 @@
 		"build": "node ./build.js && web-ext build --source-dir src",
 		"lint": "web-ext lint --source-dir src",
 		"test": "karma start",
-		"test:debug": "karma start --no-single-run --auto-watch"
+		"test:watch": "karma start --no-single-run",
+		"test:debug": "karma start --no-single-run --browsers Firefox"
 	},
 	"files": [
 		"index.js"
