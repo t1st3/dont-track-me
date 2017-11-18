@@ -32,18 +32,15 @@ class DontTrackMe {
 				}
 			}
 		}
-		return (urls.length === 0) ? ['nonexistingurl.com'] : urls;
+		return (urls.length === 0) ? ['https://nonexistingurl.dev'] : urls;
 	}
 
 	static handleRequest (details) {
-		console.dir(details);
 		for (let i in networks) {
 			if (typeof details.documentUrl === 'undefined' || details.documentUrl.match(networks[i].urlMatch)) {
-				console.log(`Allowed ${details.url}`);
 				return {cancel: false};
 			}
 		}
-		console.log(`Blocked ${details.url}`);
 		return {cancel: true};
 	};
 }
