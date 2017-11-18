@@ -3,7 +3,7 @@
 	"name": "dont-track-me",
 	"description": "WebExtension that prevents you from being tracked by Facebook/Twitter when you browse the web.",
 	"homepage_url": "https://github.com/t1st3/dont-track-me",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"icons": {
 		"48": "icons/block.svg",
 		"96": "icons/block.svg"
