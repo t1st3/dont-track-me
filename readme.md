@@ -1,5 +1,7 @@
 # dont-track-me [![Build Status](https://travis-ci.org/t1st3/dont-track-me.svg?branch=master)](https://travis-ci.org/t1st3/dont-track-me) [![codecov](https://codecov.io/gh/t1st3/dont-track-me/badge.svg?branch=master)](https://codecov.io/gh/t1st3/dont-track-me?branch=master)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/t1st3/dont-track-me.svg)](https://greenkeeper.io/)
+
 > WebExtension (for Firefox/Chrome/Opera/Edge) that prevents you from being tracked by Facebook/Twitterwhen you browse the web.
 
 
