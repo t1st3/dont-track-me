@@ -15,7 +15,7 @@
 		}
 	},
 	"background": {
-		"scripts": ["browser-polyfill.min.js", "dont-track-me.js", "background.js"]
+		"scripts": ["vendor/browser-polyfill.min.js", "dont-track-me.js", "background.js"]
 	},
 	"options_ui": {
 		"page": "options/options.html",

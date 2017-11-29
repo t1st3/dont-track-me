@@ -18,7 +18,7 @@
 		"test": "karma start",
 		"test:watch": "karma start --no-single-run",
 		"test:debug": "karma start --no-single-run --browsers Firefox",
-		"postinstall": "cp ./node_modules/webextension-polyfill/dist/browser-polyfill.min* ./src/"
+		"postinstall": "cp ./node_modules/webextension-polyfill/dist/browser-polyfill.min* ./src/vendor/"
 	},
 	"files": [
 		"index.js"
