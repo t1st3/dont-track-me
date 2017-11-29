@@ -38,6 +38,14 @@ This extension has been tested on:
 While the extension works well with Firefox 57, **this extension is known not work with Chrome, Opera and Edge**, as its development is in first steps. Lower versions than 57 of Firefox haven't been tested.
 
 
+## Credits
+
+The icon used in this extension is a composition of two existing icons, both licensed under the [MIT license](https://github.com/iconic/open-iconic/blob/master/ICON-LICENSE) and borrowed with <3 from [Open Iconic](https://useiconic.com/open):
+
+* `check.svg`
+* `shield.svg`
+
+
 ## License
 
 MIT © [t1st3](https://t1st3.com)

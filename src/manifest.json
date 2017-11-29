@@ -5,8 +5,8 @@
 	"homepage_url": "https://github.com/t1st3/dont-track-me",
 	"version": "0.2.0",
 	"icons": {
-		"48": "icons/block.svg",
-		"96": "icons/block.svg"
+		"48": "icons/dont-track-me.svg",
+		"96": "icons/dont-track-me.svg"
 	},
 	"applications": {
 		"gecko": {
