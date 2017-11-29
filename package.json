@@ -24,7 +24,14 @@
 		"index.js"
 	],
 	"keywords": [
-		""
+		"webextension",
+		"webextensions",
+		"donottrack",
+		"dnt",
+		"facebook",
+		"twitter",
+		"privacy",
+		"social-network"
 	],
 	"dependencies": {
 		"webextension-polyfill": "^0.2.1"
