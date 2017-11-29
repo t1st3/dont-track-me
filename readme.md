@@ -3,6 +3,11 @@
 > WebExtension that prevents you from being tracked by Facebook/Twitter when you browse the web.
 
 
+## Install
+
+* Install on Firefox through [Mozilla addons](https://addons.mozilla.org/en-US/firefox/addon/dont-track-me/)
+
+
 ## About
 
 ### Motivation
