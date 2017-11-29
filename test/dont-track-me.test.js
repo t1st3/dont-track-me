@@ -1,4 +1,4 @@
-/* global describe it DontTrackMe */
+/* global describe it should DontTrackMe */
 describe('DontTrackMe.buildUrlList', () => {
 	describe('should', () => {
 		const dtm = new DontTrackMe();
@@ -36,29 +36,33 @@ describe('DontTrackMe.buildUrlList', () => {
 	});
 });
 
-describe('DontTrackMe.handleRequest', () => {
+describe('DontTrackMe.isPrivilegedUrl', () => {
 	describe('should', () => {
-		it('keep the request (cancel is false) when documentUrl is a social network\'s url', done => {
-			const details = {
-				documentUrl: 'https://twitter.com/?lang=fr'
-			};
-			DontTrackMe.handleRequest(details).cancel.should.equal(false);
+		it('return true on privileged URLs', done => {
+			DontTrackMe.isPrivilegedUrl('about:config').should.not.be.empty;
+			DontTrackMe.isPrivilegedUrl('data:foobar').should.not.be.empty;
 			done();
 		});
 
-		it('keep the request (cancel is false) when documentUrl is undefined', done => {
-			const details = {
-				documentUrl: undefined
-			};
-			DontTrackMe.handleRequest(details).cancel.should.equal(false);
+		it('return false on non-privileged URLs', done => {
+			should.not.exist(DontTrackMe.isPrivilegedUrl('https://github.com'));
+			should.not.exist(DontTrackMe.isPrivilegedUrl('https://data.org'));
+			done();
+		});
+	});
+});
+
+describe('DontTrackMe.isAllowingTab', () => {
+	describe('should', () => {
+		it('return true when tab URL is a social network URL', done => {
+			DontTrackMe.isAllowingTab('https://twitter.com').should.equal(true);
+			DontTrackMe.isAllowingTab('https://www.facebook.com').should.equal(true);
 			done();
 		});
 
-		it('cancel the request (cancel is true) when documentUrl isn\'t a social network\'s url', done => {
-			const details = {
-				documentUrl: 'https://anyfriendlydomain.org/?lang=de'
-			};
-			DontTrackMe.handleRequest(details).cancel.should.equal(true);
+		it('return false when tab URL is NOT a social network URL', done => {
+			DontTrackMe.isAllowingTab('https://example.com').should.equal(false);
+			DontTrackMe.isAllowingTab('https://data.org').should.equal(false);
 			done();
 		});
 	});

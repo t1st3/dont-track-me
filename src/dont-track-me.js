@@ -1,3 +1,5 @@
+const browser = window.browser || window.chrome;
+
 const networks = {
 	facebook: {
 		urls: [
@@ -18,9 +20,29 @@ const networks = {
 	}
 };
 
+function getTabInfo (tabId, resolve, reject) {
+	return browser.tabs.get(tabId).then(resolve, reject);
+}
+
 class DontTrackMe { // eslint-disable-line no-unused-vars
 	constructor() {
 		this.networks = networks;
+	}
+
+	static isPrivilegedUrl (url) {
+		return url.match(/^(about|chrome|file|javascript|data):/);
+	}
+
+	static isAllowingTab (tabUrl) {
+		if (DontTrackMe.isPrivilegedUrl(tabUrl)) {
+			return true;
+		}
+		for (const i in networks) {
+			if (tabUrl.match(networks[i].urlMatch)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	buildUrlList() {
@@ -36,11 +58,10 @@ class DontTrackMe { // eslint-disable-line no-unused-vars
 	}
 
 	static handleRequest(details) {
-		for (const i in networks) {
-			if (typeof details.documentUrl === 'undefined' || details.documentUrl.match(networks[i].urlMatch)) {
-				return {cancel: false};
-			}
-		}
-		return {cancel: true};
+		return getTabInfo(details.tabId, tabInfo => {
+			return {cancel: !DontTrackMe.isAllowingTab(tabInfo.url)};
+		}, err => {
+			return err;
+		});
 	}
 }

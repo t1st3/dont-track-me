@@ -1,6 +1,4 @@
-/* global window DontTrackMe */
-
-const browser = window.browser || window.chrome;
+/* global browser DontTrackMe */
 
 const dontTrackMe = new DontTrackMe();
 

@@ -1,6 +1,4 @@
-/* global document window */
-
-const browser = window.browser || window.chrome;
+/* global document browser */
 
 const checkboxes = {
 	blockFacebookTracking: document.querySelector('#block-facebook-tracking'),
