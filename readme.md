@@ -1,5 +1,7 @@
 # dont-track-me [![Build Status](https://travis-ci.org/t1st3/dont-track-me.svg?branch=master)](https://travis-ci.org/t1st3/dont-track-me) [![codecov](https://codecov.io/gh/t1st3/dont-track-me/badge.svg?branch=master)](https://codecov.io/gh/t1st3/dont-track-me?branch=master)
 
+![dont-track-me logo](https://raw.githubusercontent.com/t1st3/dont-track-me/master/src/icons/dont-track-me.svg)
+
 > WebExtension that prevents you from being tracked by Facebook/Twitter when you browse the web.
 
 
