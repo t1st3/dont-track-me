@@ -2,6 +2,7 @@
 
 const dontTrackMe = new DontTrackMe();
 
+/* Listen to options change in storage */
 browser.storage.onChanged.addListener(newSettings => {
 	for (const i in dontTrackMe.networks) { // eslint-disable-line guard-for-in
 		dontTrackMe.networks[i].blocked = newSettings.blockedNetworks.newValue[i];
@@ -9,6 +10,10 @@ browser.storage.onChanged.addListener(newSettings => {
 	updateListener();
 });
 
+/* Get the options from storage
+ * If options aren't set in storage (e.g. on first run),
+ * they are set from defaults.
+ */
 browser.storage.local.get().then(storedSettings => {
 	if (storedSettings.blockedNetworks) {
 		for (const i in dontTrackMe.networks) { // eslint-disable-line guard-for-in
