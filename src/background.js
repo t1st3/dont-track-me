@@ -25,7 +25,7 @@ browser.storage.local.get().then(storedSettings => {
 	}
 	updateListener();
 }).catch(() => {
-	console.log('Error retrieving stored settings');
+	console.log('Error retrieving stored settings'); // eslint-disable-line no-console
 });
 
 function updateListener() {

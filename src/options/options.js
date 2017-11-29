@@ -23,7 +23,7 @@ function updateUI(restoredSettings) {
 }
 
 function onError(e) {
-	console.error(e);
+	console.error(e); // eslint-disable-line no-console
 }
 
 browser.storage.local.get().then(updateUI, onError);
