@@ -1,6 +1,6 @@
 {
 	"name": "dont-track-me",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "WebExtension that prevents you from being tracked by Facebook/Twitter when you browse the web.",
 	"license": "MIT",
 	"repository": "t1st3/dont-track-me",
